@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SLACK TO HTML</title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body  ng-app="Main">
+		<div class="messages" ng-controller="Main-Controller">
+			<div class="notme">
+				<div class="title">{{ Title }}</div>
+			</div>
+
+			<div class="shell" ng-repeat="i in getNumList()" ng-class="{lastdata : i == DataPerPage - 1}" ng-style="{ 'background-color' : (Data[i + index * DataPerPage].channel | room_bg) , 'border' : (Data[i + index * DataPerPage].channel | room_brg) }">
+				<img ng-src="{{ Data[i + index * DataPerPage] | img }}" err-src="img/Unknow.png" />
+				<div class="message">
+					<div class="username">{{ Data[i + index * DataPerPage] | name }}</div>
+					<div class="time">{{ Data[i + index * DataPerPage].ts | time }}</div>
+					<div class="msg" ng-bind-html="Data[i + index * DataPerPage] | text"></div>
+				</div>
+			</div>
+			<!--<div style="height: 25px;"></div>-->
+			<div class="page">
+				<div class="pagenum jumper">跳轉到頁面<input type="number"  ng-model="jumpto" ng-change="CheckJump()"><button ng-click="Jump()" style="width:50px">JUMP</button></div>
+				<button ng-click="LastPage()">←</button>
+				<div class="pagenum">{{ (index + 1) + " / " + TotalPages }}</div>
+				<button ng-click="NextPage()">→</button>
+				<div class="pagenum datanum">每頁資料筆數<input type="number"  ng-model="DataPerPage" ng-change="ReCalcPage()"></div>
+			</div>
+		</div>
+
+		<div class="JSON_Selecter" ng-controller="JSON_Selecter">
+			<div id="data">
+				<li ng-repeat="i in getNumList()" ng-click="Click(JsonList[index * 10 + i])"><a>{{ getName(JsonList[index * 10 + i])  }}</a></li>
+			</div>
+			<div id="page">
+				<button ng-click="LastPage()">←</button>
+				<div class="pagenum">{{ (index+1) + " / " + total }}</div>
+				<button ng-click="NextPage()">→</button>
+			</div>
+			<div id="stick">ＬＯＧ選擇</div>
+		</div>
+		<div class="loading"><span>LOADING......</span></div>
+
+    	<script src="script/jquery-2.1.3.min.js"></script>
+    	<script src="script/angular.min.js"></script>
+    	<script src="script/angular-sanitize.js"></script>
+    	<script src="script/jquery.cookie.js"></script>
+		<script src="script/MainController.js"></script>
+	</body>
+</html>

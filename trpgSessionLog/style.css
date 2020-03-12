@@ -1,0 +1,289 @@
+* {
+	padding: 0 !important;
+	margin: 0;
+	word-break: break-all;
+	font-family: 'Source Han Sans TC', 'Open Sans Han TWHK',
+			'Noto Sans CJK TC', 'Noto Sans T Chinese', 'Source Han Sans TC',
+			'黑體-繁', 'Heiti TC', '蘋果儷中黑', 'Apple LiGothic Medium',
+			'微軟雅黑', 'Microsoft YaHei ', '微軟正黑體', 'Microsoft JhengHei',
+			'文泉驛微米黑', 'WenQuanYi Micro Hei', '文泉驛正黑',
+			'Droid Sans', 'Droid Sans Fallback', sans-serif;
+}
+
+html{
+	overflow: -moz-scrollbars-vertical; 
+	overflow-y: scroll;
+}
+
+body {
+	text-align: center;
+	padding: 1em;
+}
+
+.messages {
+	width: 100%;
+	max-width: 700px;
+	text-align: left;
+	display: inline-block;
+}
+
+.messages div:not(.notme):not(.title):not(.page) {
+	background-color: #F9F9F9;
+	border: #F9F9F9 5px solid;
+	border-radius: 3px;
+}
+
+.messages > div {
+	box-shadow: 0 3px 0 #EEE;
+}
+
+.notme {
+	box-shadow: 0 3px 0 #F7DB79 !important;
+}
+
+.messages img {
+	background-color: rgb(248,244,240);
+	width: 36px;
+	height: 36px;
+	border-radius: 0.2em;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 0.65em;
+	position: relative;
+	left: 8px;
+	top: 16px;
+	border: 1px solid #dedede;
+}
+
+.messages .time {
+	display: inline-block;
+	color: rgb(200,200,200);
+	margin-left: 0.5em;
+}
+
+.messages .username {
+	display: inline-block;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.messages .message {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 1;
+	width: calc(100% - 3em - 15px);
+}
+
+.messages .message .msg {
+	line-height: 1.5;
+}
+
+.title {
+	background-color: #FFEC9F;
+	border: 20px #FFEC9F solid;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	margin-bottom: 30px;
+	font-size: larger;
+}
+
+.outer {
+	background-color: #F1F1F1 !important;
+	border: 1px #A5A5A5 solid !important;
+	border-radius: 3px;
+	padding: 10px !important;
+}
+
+.code {
+	background-color: #F7F7F7;
+	border: 1px #D4D4D4 solid;
+	border-radius: 3px;
+	margin: 6px;
+	padding: 1px !important;
+	color: #A90314;
+}
+
+.sub {
+	border-left: 4px #AAA solid !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	margin-left: 5px;
+	border-radius: 6px !important;
+	padding-left: 10px !important;
+}
+
+.page {
+	position: fixed;
+	bottom: 0;
+    right: 0;
+    width: 100vw;
+    text-align: center;
+    background: #2b2b2b;
+    z-index: 5;
+    color: #eee;
+    font-size: 16pt;
+}
+
+.pagenum{
+	display: inline-block;
+	background-color: rgba(255,255,255,0.15) !important;
+	border: 0 !important;
+	width: 200px;
+}
+
+.datanum{
+	width: 300px;
+	margin-left: 30px;
+}
+
+.jumper{
+	width: 300px;
+	margin-right: 30px;
+}
+
+.datanum > input , .jumper > input {
+	width: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+.shell{
+	margin-bottom: 20px;
+}
+
+.lastdata{
+	margin-bottom: 50px;
+}
+
+.JSON_Selecter{
+	position: fixed;
+	top: 50px;
+	width: 300px;
+	height: 500px;
+	left: -250px;
+	background-color: #2c2c2c;
+	transition: left 0.32s;
+	color: #F7F7F7;
+	border-bottom-right-radius: 6px !important;
+	border-top-right-radius: 6px !important;
+}
+
+.JSON_Selecter:hover{
+	left: 0px;
+	transition: left 0.32s;
+}
+
+.JSON_Selecter > #data{
+	width: 220px;
+	height: calc(100% - 20px);
+	position: relative;
+	margin: 10px 10px 10px 0px;
+	float: left;
+	text-align: center;
+}
+
+.JSON_Selecter > #data > li{
+	display: inline-block;
+    border-bottom: 3px solid rgb(226, 226, 226);
+    background-color: #f9f9f9;
+    width: 230px;
+    margin-bottom: 12px;
+    color: #2B2B2B;
+    cursor: pointer;
+    border-left: 0px;
+    border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+    text-align: left;
+    height: 30px;
+    transition: background-color 0.192s,color 0.192s,border-color 0.192s;
+}
+
+.JSON_Selecter > #data > li:hover{
+	transition: background-color 0.192s,color 0.192s,border-color 0.192s;
+	background-color: #86C166;
+	border-color: #609c40;
+	color: #f9f9f9;
+}
+
+.JSON_Selecter > #data > li:active{
+	transition: background-color 0.192s,color 0.192s,border-color 0.192s;
+	background-color: #1B813E;
+	color: #f9f9f9;
+	border-color: #125429;
+}
+
+.JSON_Selecter > #data > li > a{
+	margin: 5px 10px 5px 10px;
+    vertical-align: middle;
+}
+
+.JSON_Selecter > #data > div {
+	position: relative;
+    top: 50px;
+}
+
+.JSON_Selecter > #page > .pagenum{
+	width: 100px;
+}
+
+.JSON_Selecter > #page{
+    display: block;
+    width: 220px;
+    margin: 10px 10px 10px 0px;
+    height: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.JSON_Selecter > #stick{
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	width: 50px;
+	float: right;
+	position: relative;
+	font-size: 20pt;
+	top: 15px;
+}
+
+button{
+	width: 25px;
+	height: 25px;
+	border: 0px;
+	border-radius: 2px !important;
+	transition: background-color 0.192s,color 0.192s;
+	background-color: #FCFAF2;
+}
+
+button:hover{
+	transition: background-color 0.192s,color 0.192s;
+	background-color: #86C166;
+	color: #f9f9f9;
+}
+
+button:active{
+	transition: background-color 0.192s,color 0.192s;
+	background-color: #1B813E;
+	color: #f9f9f9;
+}
+
+input{
+	text-align: center;
+}
+
+.loading{
+	z-index: 10;
+    width: 99vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top: 0;
+    font-size: 100pt;
+}
+
+.loading > span{
+	position: relative;
+    top: calc(50% - 100pt);
+    color: rgba(0,0,0,0.75);
+}
